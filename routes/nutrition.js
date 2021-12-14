@@ -12,7 +12,6 @@ router.route('/add').post((req, res) => {
   const meal = req.body.meal;
   const description = req.body.description;
   const calories = Number(req.body.duration);
-
   const newNutrition = new Nutrition({
     username,
     meal,
@@ -42,7 +41,6 @@ router.route('/update/:id').post((req, res) => {
       nutrition.meal = req.body.meal;
       nutrition.description = req.body.description;
       nutrition.calories = Number(req.body.calories);
-
       nutrition.save()
         .then(() => res.json('Nutrition updated!'))
         .catch(err => res.status(400).json('Error: ' + err));

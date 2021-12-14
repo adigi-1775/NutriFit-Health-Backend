@@ -12,7 +12,6 @@ router.route('/add').post((req, res) => {
   const exerciseName = req.body.exerciseName;
   const description = req.body.description;
   const duration = Number(req.body.duration);
-
   const newExercise = new Exercise({
     username,
     exerciseName,
@@ -42,7 +41,6 @@ router.route('/update/:id').post((req, res) => {
       exercise.exerciseName = req.body.exerciseName;
       exercise.description = req.body.description;
       exercise.duration = Number(req.body.duration);
-
       exercise.save()
         .then(() => res.json('Exercise updated!'))
         .catch(err => res.status(400).json('Error: ' + err));

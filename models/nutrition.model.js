@@ -6,9 +6,7 @@ const nutritionSchema = new Schema({
   meal: { type: String },
   description: { type: String, required: true },
   calories: { type: Number, required: true },
-}, {
-  timestamps: true,
-});
+})
 
 const Nutrition = mongoose.model('Nutrition', nutritionSchema);
 

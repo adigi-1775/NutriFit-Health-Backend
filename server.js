@@ -18,11 +18,11 @@ connection.once('open', () => {
 
 const exerciseRouter = require('./routes/exercise');
 const nutritionRouter = require('./routes/nutrition');
-const usersRouter = require('./routes/users');
+const userRouter = require('./routes/user');
 
 app.use('/exercise', exerciseRouter);
 app.use('/nutrition', nutritionRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 
 
 app.listen(PORT, () => {
