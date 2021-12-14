@@ -8,11 +8,13 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+  const username = req.body.username;
   const exerciseName = req.body.exerciseName;
   const description = req.body.description;
   const duration = Number(req.body.duration);
 
   const newExercise = new Exercise({
+    username,
     exerciseName,
     description,
     duration,
@@ -36,6 +38,7 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
   Exercise.findById(req.params.id)
     .then(exercise => {
+      exercise.username = req.body.username;
       exercise.exerciseName = req.body.exerciseName;
       exercise.description = req.body.description;
       exercise.duration = Number(req.body.duration);

@@ -8,11 +8,13 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+  const username = req.body.username;
   const meal = req.body.meal;
   const description = req.body.description;
   const calories = Number(req.body.duration);
 
   const newNutrition = new Nutrition({
+    username,
     meal,
     description,
     calories,
@@ -36,6 +38,7 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
   Nutrition.findById(req.params.id)
     .then(nutrition => {
+      exercise.username = req.body.username;
       nutrition.meal = req.body.meal;
       nutrition.description = req.body.description;
       nutrition.calories = Number(req.body.calories);
