@@ -13,10 +13,10 @@ if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:5000';
 }
 else {
-  baseURL = 'https://nutrifit-health-frontend.herokuapp.com/';
+  baseURL = 'https://nutrifit-health-frontend.herokuapp.com';
 }
 
-const whitelist = ['http://localhost:3000','https://nutrifit-health-frontend.herokuapp.com/']
+const whitelist = ['http://localhost:3000','https://nutrifit-health-frontend.herokuapp.com']
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
