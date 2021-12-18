@@ -16,6 +16,18 @@ else {
   baseURL = 'https://nutrifit-health-frontend.herokuapp.com/';
 }
 
+const whitelist = ['http://localhost:3000','https://nutrifit-health-frontend.herokuapp.com/']
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+
 const URI = process.env.ATLAS_URI;
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }
 );
