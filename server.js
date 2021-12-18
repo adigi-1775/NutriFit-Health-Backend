@@ -12,9 +12,9 @@ let baseURL;
 if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:3000';
 }
-// else {
-//   baseURL = '';
-// }
+else {
+  baseURL = 'https://nutrifit-health-backend.herokuapp.com';
+}
 
 const URI = process.env.ATLAS_URI;
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }
