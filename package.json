@@ -1,3 +1,6 @@
+"engines": {
+    "node": "14.17.1"
+  },
 {
   "name": "nutrifit-health-backend",
   "version": "1.0.0",
