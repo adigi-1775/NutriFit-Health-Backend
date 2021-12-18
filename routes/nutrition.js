@@ -34,18 +34,25 @@ router.route('/:id').delete((req, res) => {
     .then(() => res.json('Nutrition deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-router.route('/update/:id').post((req, res) => {
-  Nutrition.findById(req.params.id)
-    .then(nutrition => {
-      exercise.username = req.body.username;
-      nutrition.meal = req.body.meal;
-      nutrition.description = req.body.description;
-      nutrition.calories = Number(req.body.calories);
-      nutrition.save()
-        .then(() => res.json('Nutrition updated!'))
-        .catch(err => res.status(400).json('Error: ' + err));
-    })
-    .catch(err => res.status(400).json('Error: ' + err));
+router.route('/update/:id').put((req, res) => {
+  console.log(req.params.id);
+  console.log(req.body);
+  console.log(typeof Nutrition.findByIdAndUpdate(req.params.id));
+  Nutrition.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedNutrition)=>{
+    console.log(updatedNutrition);
+    if(err) return console.log(err);
+    res.status(200).json(updatedNutrition)
+  })
+    // .then(nutrition => {
+    //   console.log(nutrition);
+    //   nutrition.username = req.body.username;
+    //   nutrition.meal = req.body.meal;
+    //   nutrition.description = req.body.description;
+    //   nutrition.calories = Number(req.body.calories);
+    //   nutrition.save()
+    //     res.json({message:'hello'})
+    // })
+    // .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;
