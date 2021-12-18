@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:3000';
 }
 // else {
-//   baseURL = 'https://thawing-dawn-15827.herokuapp.com';
+//   baseURL = '';
 // }
 
 const URI = process.env.ATLAS_URI;
