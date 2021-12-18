@@ -1,6 +1,3 @@
-"engines": {
-    "node": "14.17.1"
-  },
 {
   "name": "nutrifit-health-backend",
   "version": "1.0.0",
@@ -18,6 +15,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/adigi-1775/NutriFit-Health-Backend/issues"
+  },
+  "engines": {
+      "node": "14.17.1"
   },
   "homepage": "https://github.com/adigi-1775/NutriFit-Health-Backend#readme",
   "dependencies": {
