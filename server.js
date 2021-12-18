@@ -11,9 +11,10 @@ app.use(express.json());
 let baseURL;
 if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:3000';
-} else {
-  baseURL = 'https://thawing-dawn-15827.herokuapp.com';
 }
+// else {
+//   baseURL = 'https://thawing-dawn-15827.herokuapp.com';
+// }
 
 const URI = process.env.ATLAS_URI;
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }
