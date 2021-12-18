@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'development') {
   baseURL = 'http://localhost:3000';
 }
 else {
-  baseURL = 'https://nutrifit-health-backend.herokuapp.com';
+  baseURL = 'https://nutrifit-health-frontend.herokuapp.com/';
 }
 
 const URI = process.env.ATLAS_URI;
